@@ -104,7 +104,7 @@ function sandal() {
 if [[ "$1" == "update" ]]; then
 	echo -e "${nmfl}: Update tệp lệnh..."
 	echo -e "${nmfl}: Đang tải tệp lệnh..."
-	wget "https://raw.githubusercontent.com/CHUNGSEV/time/main/jam.sh" -O "$jamup"
+	curl -sL "https://raw.githubusercontent.com/CHUNGSEV/time/main/jam.sh" > "$jamup"
 	chmod +x "$jamup"
 	sed -i 's/\r$//' "$jamup"
 	cat << "EOF" > "$jamup2"
