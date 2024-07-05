@@ -1,0 +1,8 @@
+
+config usteer
+	option network 'lan'
+	option syslog '0'
+	option local_mode '0'
+	option ipv6 '0'
+	option debug_level '2'
+
