@@ -38,5 +38,4 @@ config wifi-iface 'default_radio1'
 	option mobility_domain '123F'
 	option ft_over_ds '0'
 	option ft_psk_generate_local '1'
-	option dtim_period '3'
 
