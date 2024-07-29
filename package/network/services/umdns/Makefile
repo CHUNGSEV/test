@@ -27,7 +27,7 @@ define Package/umdns
   SECTION:=net
   CATEGORY:=Network
   TITLE:=OpenWrt Multicast DNS Daemon
-  DEPENDS:=+libubox +libubus +libblobmsg-json
+  DEPENDS:=+libubox +libubus +libblobmsg-json +libudebug
 endef
 
 TARGET_CFLAGS += -I$(STAGING_DIR)/usr/include
