@@ -1,6 +1,6 @@
 src-git packages https://git.openwrt.org/feed/packages.git
-src-git luci https://git.openwrt.org/project/luci.git
+src-git luci https://github.com/CHUNGSEV/X.git;23.05.4
 src-git routing https://git.openwrt.org/feed/routing.git
 src-git telephony https://git.openwrt.org/feed/telephony.git
-src-git X https://github.com/CHUNGSEV/X.git
-src-git small https://github.com/kenzok8/small.git
+src-git X  https://github.com/CHUNGSEV/X.git;com.x-wrt
+src-git Y https://github.com/CHUNGSEV/X.git;main
