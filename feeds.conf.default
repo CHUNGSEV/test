@@ -3,8 +3,8 @@ src-git luci https://github.com/CHUNGSEV/master.git
 src-git routing https://git.openwrt.org/feed/routing.git
 src-git telephony https://git.openwrt.org/feed/telephony.git
 src-git passwall https://github.com/CHUNGSEV/X.git;passwall2
-src-git modemfeed https://github.com/koshev-msk/modemfeed.git
-src-git detector https://github.com/gSpotx2f/luci-app-internet-detector.git
+src-git modemfeed https://github.com/CHUNGSEV/modemfeed.git
+src-git detector https://github.com/CHUNGSEV/luci-app-internet-detector.git
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
 #src-git oldpackages http://git.openwrt.org/packages.git
