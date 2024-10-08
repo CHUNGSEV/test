@@ -3,7 +3,6 @@ src-git luci https://github.com/CHUNGSEV/master.git
 src-git routing https://git.openwrt.org/feed/routing.git
 src-git telephony https://git.openwrt.org/feed/telephony.git
 src-git passwall https://github.com/CHUNGSEV/X.git;passwall2
-src-git X https://github.com/CHUNGSEV/X.git;main
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
 #src-git oldpackages http://git.openwrt.org/packages.git
