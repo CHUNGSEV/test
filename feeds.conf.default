@@ -1,8 +1,8 @@
-src-git packages https://github.com/x-wrt/packages.git;24.04_b202406210000
-src-git luci https://github.com/x-wrt/luci.git;24.04_b202406210000
-src-git routing https://github.com/x-wrt/routing.git;24.04_b202406210000
-src-git telephony https://github.com/x-wrt/telephony.git;24.04_b202406210000
-src-git x https://github.com/x-wrt/com.x-wrt.git;24.04_b202406210000
+src-git packages https://github.com/CHUNGSEV/luci.git;packages
+src-git luci https://github.com/CHUNGSEV/luci.git;luci
+src-git routing https://github.com/CHUNGSEV/luci.git;routing
+src-git telephony https://github.com/CHUNGSEV/luci.git;telephony
+src-git x https://github.com/CHUNGSEV/luci.git;com.x-wrt
 #src-git-full video https://github.com/openwrt/video.git
 #src-git-full targets https://github.com/openwrt/targets.git
 #src-git-full oldpackages http://git.openwrt.org/packages.git
