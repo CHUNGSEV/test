@@ -9,7 +9,7 @@
 	compatible = "ruijie,rg-mtfi-m520", "qcom,ipq8064";
 
 	memory@0 {
-		reg = <0x42000000 0x7e000000>;
+		reg = <0x42000000 0x3e000000>;
 		device_type = "memory";
 	};
 
