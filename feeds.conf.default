@@ -5,3 +5,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git^98c8a5aa4624312ed75
 src-git modemfeed https://github.com/CHUNGSEV/modemfeed.git
 src-git detector https://github.com/CHUNGSEV/luci-app-internet-detector.git
 src-git passwall2 https://github.com/CHUNGSEV/X.git;passwall2
+src-git x https://github.com/CHUNGSEV/luci.git;com.x-wrt
