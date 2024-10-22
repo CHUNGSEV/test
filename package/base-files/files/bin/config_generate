@@ -50,7 +50,7 @@ generate_static_network() {
 				delete network.globals
 				set network.globals='globals'
 				set network.globals.ula_prefix='auto'
-				set network.globals.packet_steering '1'
+				set network.globals.packet_steering='1'
 			EOF
 		}
 
