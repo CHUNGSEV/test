@@ -51,6 +51,7 @@ generate_static_network() {
 				set network.globals='globals'
 				set network.globals.ula_prefix='auto'
 				set network.globals.packet_steering='1'
+				set firewall.@defaults[0].flow_offloading='1'
 			EOF
 		}
 
