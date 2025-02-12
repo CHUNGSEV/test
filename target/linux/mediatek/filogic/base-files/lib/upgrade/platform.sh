@@ -220,6 +220,8 @@ platform_check_image() {
 platform_copy_config() {
 	case "$(board_name)" in
 	bananapi,bpi-r3|\
+	bananapi,bpi-r4|\
+	bananapi,bpi-r4-poe) 
 	cmcc,rax3000m)
 		case "$(cmdline_get_var root)" in
 		/dev/mmc*)
