@@ -79,7 +79,9 @@ platform_do_upgrade() {
 		CI_KERNPART="linux"
 		nand_do_upgrade "$1"
 		;;
-	bananapi,bpi-r3)
+	bananapi,bpi-r3|\
+	bananapi,bpi-r4|\
+	bananapi,bpi-r4-poe)
 		local rootdev="$(cmdline_get_var root)"
 		rootdev="${rootdev##*/}"
 		rootdev="${rootdev%p[0-9]*}"
