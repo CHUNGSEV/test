@@ -196,6 +196,8 @@ platform_check_image() {
 
 	case "$board" in
 	bananapi,bpi-r3|\
+ 	bananapi,bpi-r4|\
+	bananapi,bpi-r4-poe)
 	cmcc,rax3000m)
 		[ "$magic" != "d00dfeed" ] && {
 			echo "Invalid image type."
