@@ -4,5 +4,7 @@ src-git routing https://git.openwrt.org/feed/routing.git^e87b55c6a642947ad7e24cd
 src-git telephony https://git.openwrt.org/feed/telephony.git^fd605af7143165a2490681ec1752f259873b9147
 src-git nss_packages https://github.com/qosmio/nss-packages.git;NSS-12.5-K6.x
 src-git sqm_scripts_nss https://github.com/qosmio/sqm-scripts-nss.git
+src-git modemfeed https://github.com/CHUNGSEV/modemfeed.git
+src-git detector https://github.com/CHUNGSEV/luci-app-internet-detector.git
 src-git passwall2 https://github.com/CHUNGSEV/X.git;passwall2
 src-git x https://github.com/CHUNGSEV/luci.git;com.x-wrt
