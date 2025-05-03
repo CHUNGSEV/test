@@ -1,4 +1,11 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
-
+ipset -N youtubev4 hash:net
+ipset -N youtubev6 hash:net family inet6
+ipset -N facebook hash:net
+ipset -N facebookv6 hash:net family inet6
+ipset -N tiktok hash:net
+ipset -N  tiktokv6 hash:net family inet6
+service dnsmasq restart
+mwan3 restart
 exit 0
