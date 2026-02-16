@@ -52,6 +52,19 @@ generate_static_network() {
 				set network.globals.ula_prefix='auto'
 				set network.globals.packet_steering='1'
 				set firewall.@defaults[0].flow_offloading='1'
+				set network.5G=interface
+				set network.5G.proto='qmi'
+				set network.5G.device='/dev/cdc-wdm0'
+				set network.5G.apn='m3-world'
+				set network.5G.auth='both'
+				set network.5G.username='mms'
+				set network.5G.password='mms'
+				set network.5G.pdptype='ipv4v6'
+				del firewall.cfg03dc81.network
+				add_list firewall.cfg03dc81.network='wan'
+				add_list firewall.cfg03dc81.network='wan6'
+				add_list firewall.cfg03dc81.network='4G'
+				add_list firewall.cfg03dc81.network='5G'
 			EOF
 		}
 
