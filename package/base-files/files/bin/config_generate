@@ -73,6 +73,16 @@ generate_static_network() {
 				set watchcat.@watchcat[-1].pingsize='standard'
 				set watchcat.@watchcat[-1].interface='wwan0'
 				set watchcat.@watchcat[-1].mmifacename='5G'
+				add ttl ttl # =cfg01afb9
+				add ttl ttl # =cfg02afb9
+				set ttl.cfg01afb9.method='ttl'
+				set ttl.cfg01afb9.advanced='1'
+				set ttl.cfg01afb9.inet='ipv4'
+				set ttl.cfg01afb9.ttl='64'
+				set ttl.@ttl[-1].method='ttl'
+				set ttl.@ttl[-1].advanced='1'
+				set ttl.@ttl[-1].inet='ipv6'
+				set ttl.@ttl[-1].ttl='64'
 			EOF
 		}
 
