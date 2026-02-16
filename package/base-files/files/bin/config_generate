@@ -65,6 +65,14 @@ generate_static_network() {
 				add_list firewall.cfg03dc81.network='wan6'
 				add_list firewall.cfg03dc81.network='4G'
 				add_list firewall.cfg03dc81.network='5G'
+				set watchcat.@watchcat[-1].mode='restart_iface'
+				set watchcat.@watchcat[-1].period='5m'
+				set watchcat.@watchcat[-1].pinghosts='142.250.197.78'
+				set watchcat.@watchcat[-1].addressfamily='any'
+				set watchcat.@watchcat[-1].pingperiod='30s'
+				set watchcat.@watchcat[-1].pingsize='standard'
+				set watchcat.@watchcat[-1].interface='wwan0'
+				set watchcat.@watchcat[-1].mmifacename='5G'
 			EOF
 		}
 
