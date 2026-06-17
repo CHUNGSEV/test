@@ -1,0 +1,100 @@
+#!/bin/sh
+
+# Auto start service
+/etc/init.d/igmpproxy enable
+/etc/init.d/udpxy enable
+
+# IGMP version 2
+grep -q "^net.ipv4.conf.all.force_igmp_version=2" /etc/sysctl.conf || \
+echo "net.ipv4.conf.all.force_igmp_version=2" >> /etc/sysctl.conf
+
+# Disable IPv6
+uci -q delete dhcp.lan.ra
+uci -q delete dhcp.lan.dhcpv6
+uci -q delete network.wan6
+uci set firewall.@defaults[0].disable_ipv6='1'
+
+grep -q "^net.ipv6.conf.all.disable_ipv6=1" /etc/sysctl.conf || \
+echo "net.ipv6.conf.all.disable_ipv6=1" >> /etc/sysctl.conf
+
+# Enable IGMP snooping LAN
+uci set network.lan.igmp_snooping='1'
+
+uci commit dhcp
+uci commit firewall
+uci commit network
+
+# Firewall IPTV rules
+cat >> /etc/config/firewall << 'EOF'
+
+config rule
+        option name 'Allow-IGMP-WAN'
+        option src 'wan'
+        option proto 'igmp'
+        option target 'ACCEPT'
+
+config rule
+        option name 'Allow-IPTV-UDP-WAN-LAN'
+        option src 'wan'
+        option proto 'udp'
+        option dest 'lan'
+        option dest_ip '224.0.0.0/4'
+        option target 'ACCEPT'
+
+config rule
+        option name 'Allow-UDProxy-8889'
+        option target 'ACCEPT'
+        option src 'wan'
+        option proto 'tcp'
+        option family 'ipv4'
+        option dest_port '8889'
+
+config rule
+        option name 'Allow-Multicast-UDP-WAN'
+        option src 'wan'
+        option proto 'udp'
+        option dest_ip '224.0.0.0/4'
+        option target 'ACCEPT'
+EOF
+
+# igmpproxy config
+cat > /etc/config/igmpproxy << 'EOF'
+config igmpproxy
+        option quickleave 1
+
+config phyint
+        option network wan
+        option zone wan
+        option direction upstream
+        list altnet 0.0.0.0/0
+
+config phyint
+        option network lan
+        option zone lan
+        option direction downstream
+EOF
+
+# udpxy config
+cat > /etc/config/udpxy << 'EOF'
+config udpxy
+        option disabled '0'
+        option respawn '1'
+        option verbose '0'
+        option status '1'
+        option bind 'br-lan'
+        option port '8889'
+        option max_clients '5'
+        option buffer_time '3'
+        option mcsub_renew '120'
+EOF
+
+# Apply sysctl
+sysctl -p
+
+# Restart services
+/etc/init.d/network reload
+/etc/init.d/firewall restart
+/etc/init.d/igmpproxy restart
+/etc/init.d/udpxy restart
+
+exit 0
